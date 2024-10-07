@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://imgurhd.ru/i/994t.jpg'); /* Фоновое изображение */
+            background-image: url('https://imgurhd.ru/i/994t.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -21,7 +21,7 @@
         .container {
             max-width: 1200px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -52,46 +52,88 @@
             background-color: #4CAF50;
             color: white;
         }
-        .products {
+        .products, .managers {
             display: flex;
             justify-content: space-between;
             margin: 20px 0;
             flex-wrap: wrap;
         }
-        .product {
+        .product, .manager {
             background-color: #f4f4f4;
             padding: 20px;
             width: 30%;
             margin: 10px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s;
         }
-        .product img {
+        .product img, .manager img {
             max-width: 100%;
             border-radius: 10px;
-        }
-        .product:hover {
-            transform: scale(1.05);
-        }
-        .managers {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        .manager {
-            background-color: #f4f4f4;
-            padding: 20px;
-            width: 30%;
-            margin: 10px;
-            border-radius: 10px;
-            text-align: center;
         }
         .manager img {
-            max-width: 100%;
             border-radius: 50%;
         }
+        /* Стили для слайдера */
+        .slider {
+            position: relative;
+            max-width: 700px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slider__wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider__item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slider__item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .slider__control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 100;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .slider__control_prev {
+            left: 10px;
+        }
+        .slider__control_next {
+            right: 10px;
+        }
+        /* Стили для формы администратора */
+        .form-admin {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .form-admin input, .form-admin textarea, .form-admin select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-admin button {
+            padding: 10px 20px;
+            background-color: #006400;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Стили для бегущей строки */
         .marquee {
             background-color: #006400;
             color: white;
@@ -110,12 +152,8 @@
             animation: marquee 20s linear infinite;
         }
         @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         .footer {
             margin-top: 50px;
@@ -125,6 +163,7 @@
 <body>
 
     <div class="container">
+        <!-- Логотип и навигация -->
         <div class="logo">
             <a href="https://imgurhd.ru/994u" target="_blank">
                 <img src="https://imgurhd.ru/i/994u.jpg" alt="Логотип NEUTRAAL">
@@ -138,6 +177,7 @@
             <a href="#contact">Контакты</a>
         </div>
 
+        <!-- Секция продуктов -->
         <div class="products" id="products">
             <div class="product">
                 <h2>1. Велосипеды</h2>
@@ -162,21 +202,46 @@
             </div>
         </div>
 
-        <!-- Секция с менеджерами -->
-        <div class="managers">
-            <h2>Наши менеджеры</h2>
-            <div class="manager">
-                <img src="https://i.pravatar.cc/150?img=1" alt="Иванов Иван">
-                <p>Иванов Иван</p>
+        <!-- Слайдер -->
+        <div class="slider">
+            <div class="slider__wrapper">
+                <div class="slider__item">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Велосипед 1">
+                </div>
+                <div class="slider__item">
+                    <img src="https://images.unsplash.com/photo-1533667586627-9ec4e3b99d55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Велосипед 2">
+                </div>
+                <div class="slider__item">
+                    <img src="https://images.unsplash.com/photo-1505065231-0d3be286bfdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Велосипед 3">
+                </div>
+                <div class="slider__item">
+                    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Велоспорт">
+                </div>
             </div>
-            <div class="manager">
-                <img src="https://i.pravatar.cc/150?img=2" alt="Петров Петр">
-                <p>Петров Петр</p>
-            </div>
-            <div class="manager">
-                <img src="https://i.pravatar.cc/150?img=3" alt="Сидоров Сидор">
-                <p>Сидоров Сидор</p>
-            </div>
+            <a class="slider__control slider__control_prev" href="#" role="button">‹</a>
+            <a class="slider__control slider__control_next" href="#" role="button">›</a>
+        </div>
+
+        <!-- Интерактивная карта -->
+        <div class="map">
+            <h2>Найти нас на карте</h2>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aee78fa41c1165a7d3516557086f8d8ef895d58ed90a4da40b8b3574eaf050aa2&amp;source=constructor" width="600" height="400" frameborder="0"></iframe>
+        </div>
+
+        <!-- Форма для администратора -->
+        <div class="form-admin">
+            <h2>Форма для администратора</h2>
+            <form action="/submit" method="POST">
+                <input type="text" name="username" placeholder="Имя администратора">
+                <input type="email" name="email" placeholder="Email">
+                <select name="role">
+                    <option value="admin">Администратор</option>
+                    <option value="editor">Редактор</option>
+                    <option value="viewer">Просмотрщик</option>
+                </select>
+                <textarea name="message" placeholder="Сообщение"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
 
         <!-- Контакты -->
@@ -191,6 +256,30 @@
             <p>NEUTRAAL - Ваш путь к свободе и скорости! Покоряйте вершины на лучших велосипедах и снаряжении!</p>
         </div>
     </div>
+
+    <script>
+        const sliderWrapper = document.querySelector('.slider__wrapper');
+        const nextButton = document.querySelector('.slider__control_next');
+        const prevButton = document.querySelector('.slider__control_prev');
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider__item').length;
+
+        nextButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (currentIndex < slides - 1) {
+                currentIndex++;
+                sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        });
+
+        prevButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (currentIndex > 0) {
+                currentIndex--;
+                sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        });
+    </script>
 
 </body>
 </html>
