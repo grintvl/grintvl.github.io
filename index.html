@@ -54,7 +54,7 @@
         }
         .products {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin: 20px 0;
             flex-wrap: wrap;
         }
@@ -73,6 +73,24 @@
         }
         .product:hover {
             transform: scale(1.05);
+        }
+        .managers {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .manager {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .manager img {
+            max-width: 100%;
+            border-radius: 50%;
         }
         .marquee {
             background-color: #006400;
@@ -99,6 +117,9 @@
                 transform: translateX(-100%);
             }
         }
+        .footer {
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -119,26 +140,51 @@
 
         <div class="products" id="products">
             <div class="product">
-                <h2>Горный велосипед</h2>
+                <h2>1. Велосипеды</h2>
                 <a href="https://imgurhd.ru/994s" target="_blank">
-                    <img src="https://imgurhd.ru/i/994s.jpg" alt="Горный велосипед" />
+                    <img src="https://imgurhd.ru/i/994s.jpg" alt="Горные велосипеды" />
                 </a>
                 <p>Идеальный выбор для горных трасс</p>
             </div>
             <div class="product">
-                <h2>Шлем</h2>
+                <h2>2. Шлемы</h2>
                 <a href="https://imgurhd.ru/994v" target="_blank">
-                    <img src="https://imgurhd.ru/i/994v.jpg" alt="Шлем для велосипеда">
+                    <img src="https://imgurhd.ru/i/994v.jpg" alt="Шлемы для велосипеда">
                 </a>
                 <p>Защита и комфорт во время поездок</p>
             </div>
             <div class="product">
-                <h2>Велокомпьютер</h2>
+                <h2>3. Велокомпьютеры</h2>
                 <a href="https://imgurhd.ru/994w" target="_blank">
-                    <img src="https://imgurhd.ru/i/994w.jpg" alt="Велокомпьютер">
+                    <img src="https://imgurhd.ru/i/994w.jpg" alt="Велокомпьютеры">
                 </a>
                 <p>Отслеживайте ваши достижения на каждом километре</p>
             </div>
+        </div>
+
+        <!-- Секция с менеджерами -->
+        <div class="managers">
+            <h2>Наши менеджеры</h2>
+            <div class="manager">
+                <img src="https://i.pravatar.cc/150?img=1" alt="Иванов Иван">
+                <p>Иванов Иван</p>
+            </div>
+            <div class="manager">
+                <img src="https://i.pravatar.cc/150?img=2" alt="Петров Петр">
+                <p>Петров Петр</p>
+            </div>
+            <div class="manager">
+                <img src="https://i.pravatar.cc/150?img=3" alt="Сидоров Сидор">
+                <p>Сидоров Сидор</p>
+            </div>
+        </div>
+
+        <!-- Контакты -->
+        <div id="contact" class="footer">
+            <h2>Контакты</h2>
+            <p>Адрес: Москва, ул. Примерная, 123</p>
+            <p>Телефон: +7 (999) 123-45-67</p>
+            <p>Email: contact@neutraal.com</p>
         </div>
 
         <div class="marquee">
